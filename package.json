@@ -1,10 +1,18 @@
 {
-  "name": "dixeed-backend-utils",
-  "version": "0.1.0",
+  "name": "@dixeed/backend-utils",
+  "version": "0.0.0-development",
   "description": "A set of utility functions for backend development",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dixeed/backend-utils.git"
+  },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "cm": "git-cz",
+    "commitmsg": "commitlint -e",
+    "precommit": "lint-staged",
+    "test": "mocha --reporter spec",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": ["utils", "backend", "crypto", "mailer", "templater"],
   "author": "Dixeed",
@@ -12,20 +20,42 @@
   "engines": {
     "node": ">=6.6.0"
   },
+  "lint-staged": {
+    "{lib,test}/**/*.{js,css,json}": [
+      "prettier --single-quote --write --print-width 100 --trailing-comma es5",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "files": ["lib/"],
   "dependencies": {
-    "archiver": "^2.0.3",
-    "bluebird": "^3.5.1",
-    "crypto": "^1.0.1",
-    "fs-extra": "^4.0.2",
-    "handlebars": "^4.0.10",
-    "joi": "^11.1.1",
-    "limax": "^1.5.0",
-    "nodemailer": "^4.1.2",
-    "path": "^0.12.7",
-    "q": "^1.5.0"
+    "archiver": "2.0.3",
+    "bluebird": "3.5.1",
+    "crypto": "1.0.1",
+    "fs-extra": "4.0.2",
+    "handlebars": "4.0.10",
+    "joi": "11.1.1",
+    "limax": "1.5.0",
+    "nodemailer": "4.1.2",
+    "path": "0.12.7",
+    "q": "1.5.0"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^4.0.0"
+    "@commitlint/cli": "4.1.0",
+    "@commitlint/config-angular": "3.1.1",
+    "@dixeed/eslint-config": "1.0.0",
+    "chai": "4.1.2",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
+    "eslint": "4.8.0",
+    "husky": "0.14.3",
+    "lint-staged": "4.2.3",
+    "mocha": "4.0.0",
+    "prettier": "1.7.4",
+    "semantic-release": "8.0.3"
   }
 }
