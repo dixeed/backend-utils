@@ -3,5 +3,8 @@
   "globals": {
     "it": false,
     "describe": false
+  },
+  "env": {
+    "mocha": true
   }
 }
