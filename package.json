@@ -14,13 +14,7 @@
     "test": "mocha --reporter spec",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "keywords": [
-    "utils",
-    "backend",
-    "crypto",
-    "mailer",
-    "templater"
-  ],
+  "keywords": ["utils", "backend", "crypto", "mailer", "templater"],
   "author": "Dixeed",
   "license": "MIT",
   "engines": {
@@ -37,9 +31,7 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "files": [
-    "lib/"
-  ],
+  "files": ["lib/"],
   "dependencies": {
     "archiver": "2.0.3",
     "bluebird": "3.5.1",
@@ -65,5 +57,8 @@
     "mocha": "4.0.0",
     "prettier": "1.7.4",
     "semantic-release": "8.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
